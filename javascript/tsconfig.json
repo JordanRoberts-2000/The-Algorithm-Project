@@ -1,5 +1,6 @@
 {
   "include": ["sorting"],
+  "exclude": ["**/*.test.ts"],
   "compilerOptions": {
     "types": ["vitest/globals"],
     "target": "ES2022",
@@ -8,6 +9,8 @@
     "moduleResolution": "Node",
     "strict": true,
     "outDir": "dist",
+    "removeComments": true,
+    "noUncheckedIndexedAccess": true,
     "esModuleInterop": true
   }
 }
