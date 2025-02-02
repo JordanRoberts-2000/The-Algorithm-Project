@@ -1,23 +1,13 @@
 {
+  "include": ["sorting"],
   "compilerOptions": {
     "types": ["vitest/globals"],
-    "esModuleInterop": true,
+    "target": "ES2022",
+    "module": "ESNext",
     "skipLibCheck": true,
-    "target": "es2022",
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-
-    /* Strictness */
+    "moduleResolution": "Node",
     "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-
-    /* If transpiling with TypeScript: */
-    "module": "NodeNext",
     "outDir": "dist",
-    "sourceMap": true
+    "esModuleInterop": true
   }
 }

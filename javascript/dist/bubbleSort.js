@@ -1,9 +1,6 @@
-export default function bubbleSort<T>(
-  arr: T[],
-  comparator: (a: T, b: T) => boolean = (a, b) => a > b
-): T[] {
+export default function bubbleSort(arr, comparator = (a, b) => a > b) {
   for (let i = 0; i < arr.length - 1; i++) {
-    let swapped: boolean = false;
+    let swapped = false;
     for (let j = 0; j < arr.length - 1 - i; j++) {
       if (comparator(arr[j], arr[j + 1])) {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
