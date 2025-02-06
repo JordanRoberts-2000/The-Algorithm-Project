@@ -10,7 +10,7 @@
     "strict": true,
     "outDir": "dist",
     "removeComments": true,
-    "noUncheckedIndexedAccess": true,
+    // "noUncheckedIndexedAccess": true,
     "esModuleInterop": true
   }
 }

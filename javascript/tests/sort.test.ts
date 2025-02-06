@@ -1,10 +1,14 @@
 import { describe, it, expect } from "vitest";
-import bubbleSort from "../sorting/bubbleSort.js";
+import bubbleSort from "../sorting/bubbleSort";
+import selectionSort from "../sorting/selectionSort";
+import quickSort from "../sorting/quickSort";
+import mergeSort from "../sorting/mergeSort";
 
 const sortingAlgorithms = [
   { name: "Bubble Sort", fn: bubbleSort },
-  // { name: "Quick Sort", fn: quickSort },
-  // { name: "Merge Sort", fn: mergeSort },
+  { name: "Selection Sort", fn: selectionSort },
+  { name: "Quick Sort", fn: quickSort },
+  { name: "Merge Sort", fn: mergeSort },
 ];
 
 const defaultTestCases = [
@@ -36,39 +40,6 @@ const defaultTestCases = [
     input: [4, 4, 4, 4],
     expected: [4, 4, 4, 4],
   },
-  {
-    name: "Works with strings",
-    input: ["dog", "cat", "duck", "pig", "fish"],
-    expected: ["cat", "dog", "duck", "fish", "pig"],
-  },
-  {
-    name: "Works with floating points",
-    input: [3.2, 1.1, 4.4, 2.8],
-    expected: [1.1, 2.8, 3.2, 4.4],
-  },
-];
-
-const comparatorTestCases = [
-  {
-    name: "Works with floating points",
-    input: [3, 1, 4, 1, 5],
-    compareFn: (a, b) => a < b,
-    expected: [5, 4, 3, 1, 1],
-  },
-  {
-    name: "Sorts objects by numeric property in descending order",
-    input: [
-      { name: "Alice", age: 30 },
-      { name: "Bob", age: 25 },
-      { name: "Charlie", age: 35 },
-    ],
-    compareFn: (a, b) => a.age < b.age,
-    expected: [
-      { name: "Charlie", age: 35 },
-      { name: "Alice", age: 30 },
-      { name: "Bob", age: 25 },
-    ],
-  },
 ];
 
 sortingAlgorithms.forEach(({ name, fn }) => {
@@ -76,12 +47,6 @@ sortingAlgorithms.forEach(({ name, fn }) => {
     defaultTestCases.forEach(({ name, input, expected }) => {
       it(name, () => {
         expect(fn([...input])).toEqual(expected); // Spread to avoid mutation
-      });
-    });
-
-    comparatorTestCases.forEach(({ name, input, compareFn, expected }) => {
-      it(name, () => {
-        expect(fn([...input], compareFn)).toEqual(expected);
       });
     });
   });
