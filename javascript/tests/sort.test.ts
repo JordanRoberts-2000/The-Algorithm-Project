@@ -3,12 +3,14 @@ import bubbleSort from "../sorting/bubbleSort";
 import selectionSort from "../sorting/selectionSort";
 import quickSort from "../sorting/quickSort";
 import mergeSort from "../sorting/mergeSort";
+import insertionSort from "../sorting/insertionSort";
 
 const sortingAlgorithms = [
   { name: "Bubble Sort", fn: bubbleSort },
   { name: "Selection Sort", fn: selectionSort },
   { name: "Quick Sort", fn: quickSort },
   { name: "Merge Sort", fn: mergeSort },
+  { name: "Insertion Sort", fn: insertionSort },
 ];
 
 const defaultTestCases = [
